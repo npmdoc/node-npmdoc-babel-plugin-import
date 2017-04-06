@@ -1,0 +1,108 @@
+# api documentation for  babel-plugin-import (v1.1.1)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-plugin-import.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-plugin-import) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-plugin-import.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-plugin-import)
+#### Component modular import plugin for babel.
+
+[![NPM](https://nodei.co/npm/babel-plugin-import.png?downloads=true)](https://www.npmjs.com/package/babel-plugin-import)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-babel-plugin-import/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-babel-plugin-import_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-babel-plugin-import/build/apidoc.html)
+
+![npmPackageListing](https://npmdoc.github.io/node-npmdoc-babel-plugin-import/build/screenCapture.npmPackageListing.svg)
+
+![npmPackageDependencyTree](https://npmdoc.github.io/node-npmdoc-babel-plugin-import/build/screenCapture.npmPackageDependencyTree.svg)
+
+
+
+# package.json
+
+```json
+
+{
+    "author": {
+        "name": "chencheng",
+        "email": "sorrycc@gmail.com"
+    },
+    "babel": {
+        "presets": [
+            "es2015",
+            "stage-0"
+        ],
+        "plugins": [
+            "add-module-exports"
+        ]
+    },
+    "dependencies": {},
+    "description": "Component modular import plugin for babel.",
+    "devDependencies": {
+        "babel-cli": "^6.3.13",
+        "babel-core": "^6.18.0",
+        "babel-istanbul": "^0.7.0",
+        "babel-plugin-add-module-exports": "^0.1.2",
+        "babel-preset-es2015": "^6.18.0",
+        "babel-preset-react": "^6.16.0",
+        "babel-preset-stage-0": "^6.16.0",
+        "coveralls": "^2.11.6",
+        "eslint": "^2.7.0",
+        "eslint-config-airbnb": "^6.2.0",
+        "expect": "^1.13.4",
+        "material-ui": "^0.15.4",
+        "mocha": "^2.3.4",
+        "pre-commit": "~1.1.2",
+        "react-toolbox": "^1.2.5"
+    },
+    "directories": {},
+    "dist": {
+        "shasum": "98977e6e9cef92bffef04bb1f291c44039fe21c6",
+        "tarball": "https://registry.npmjs.org/babel-plugin-import/-/babel-plugin-import-1.1.1.tgz"
+    },
+    "files": [
+        "lib",
+        "package.json",
+        "README.md"
+    ],
+    "gitHead": "f277fcd359e8bc1dd4784acf42d6241a7073d70f",
+    "keywords": [
+        "babel-plugin",
+        "antd"
+    ],
+    "license": "MIT",
+    "main": "lib/index.js",
+    "maintainers": [
+        {
+            "name": "afc163",
+            "email": "afc163@gmail.com"
+        },
+        {
+            "name": "sorrycc",
+            "email": "sorrycc@gmail.com"
+        }
+    ],
+    "name": "babel-plugin-import",
+    "optionalDependencies": {},
+    "pre-commit": [
+        "lint"
+    ],
+    "readme": "ERROR: No README data found!",
+    "scripts": {
+        "build": "rm -rf lib && ./node_modules/.bin/babel src --out-dir lib --ignore __tests__",
+        "coveralls": "cat ./coverage/lcov.info | coveralls",
+        "debug": "mocha --require babel-core/register --require babel-polyfill --no-timeouts",
+        "lint": "eslint --ext .js src",
+        "test": "babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha --no-timeouts"
+    },
+    "version": "1.1.1"
+}
+```
+
+
+
+# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
+
+#### [module babel-plugin-import](#apidoc.module.babel-plugin-import)
+
+
+
+# <a name="apidoc.module.babel-plugin-import"></a>[module babel-plugin-import](#apidoc.module.babel-plugin-import)
+
+
+
+# misc
+- this document was created with [utility2](https://github.com/kaizhu256/node-utility2)
