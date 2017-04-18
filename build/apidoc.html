@@ -59,12 +59,273 @@
 
     <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-import">module babel-plugin-import</a><ol>
 
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-import.babel-plugin-import">
+            function <span class="apidocSignatureSpan"></span>babel-plugin-import
+            <span class="apidocSignatureSpan">(_ref)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-import.Plugin">
+            function <span class="apidocSignatureSpan">babel-plugin-import.</span>Plugin
+            <span class="apidocSignatureSpan">(libraryName, libraryDirectory, style, camel2DashComponentName, camel2UnderlineComponentName, types)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-import.toString">
+            function <span class="apidocSignatureSpan">babel-plugin-import.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-import.Plugin">module babel-plugin-import.Plugin</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-import.Plugin.Plugin">
+            function <span class="apidocSignatureSpan">babel-plugin-import.</span>Plugin
+            <span class="apidocSignatureSpan">(libraryName, libraryDirectory, style, camel2DashComponentName, camel2UnderlineComponentName, types)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-import.toString">module babel-plugin-import.toString</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.babel-plugin-import.toString.toString">
+            function <span class="apidocSignatureSpan">babel-plugin-import.</span>toString
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
     </ol></li>
 
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.babel-plugin-import" id="apidoc.module.babel-plugin-import">module babel-plugin-import</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-import.babel-plugin-import" id="apidoc.element.babel-plugin-import.babel-plugin-import">
+        function <span class="apidocSignatureSpan"></span>babel-plugin-import
+        <span class="apidocSignatureSpan">(_ref)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">babel-plugin-import = function (_ref) {
+  var types = _ref.types;
+
+  var plugins = null;
+
+  // Only for test
+  global.__clearBabelAntdPlugin = function () {
+    plugins = null;
+  };
+
+  function applyInstance(method, args, context) {
+    var _iteratorNormalCompletion = true;
+    var _didIteratorError = false;
+    var _iteratorError = undefined;
+
+    try {
+      for (var _iterator = plugins[Symbol.iterator](), _step; !(_iteratorNormalCompletion = (_step = _iterator.next()).done); _iteratorNormalCompletion
+ = true) {
+        var plugin = _step.value;
+
+        if (plugin[method]) {
+          plugin[method].apply(plugin, [].concat(_toConsumableArray(args), [context]));
+        }
+      }
+    } catch (err) {
+      _didIteratorError = true;
+      _iteratorError = err;
+    } finally {
+      try {
+        if (!_iteratorNormalCompletion &#x26;&#x26; _iterator.return) {
+          _iterator.return();
+        }
+      } finally {
+        if (_didIteratorError) {
+          throw _iteratorError;
+        }
+      }
+    }
+  }
+
+  function Program(path, _ref2) {
+    var opts = _ref2.opts;
+
+    // Init plugin instances once.
+    if (!plugins) {
+      if (Array.isArray(opts)) {
+        plugins = opts.map(function (_ref3) {
+          var libraryName = _ref3.libraryName,
+              libraryDirectory = _ref3.libraryDirectory,
+              style = _ref3.style,
+              camel2DashComponentName = _ref3.camel2DashComponentName,
+              camel2UnderlineComponentName = _ref3.camel2UnderlineComponentName;
+
+          (0, _assert2.default)(libraryName, &#x27;libraryName should be provided&#x27;);
+          return new _Plugin2.default(libraryName, libraryDirectory, style, camel2DashComponentName, camel2UnderlineComponentName
+, types);
+        });
+      } else {
+        opts = opts || {};
+        (0, _assert2.default)(opts.libraryName, &#x27;libraryName should be provided&#x27;);
+        plugins = [new _Plugin2.default(opts.libraryName, opts.libraryDirectory, opts.style, opts.camel2DashComponentName, opts.
+camel2UnderlineComponentName, types)];
+      }
+    }
+    applyInstance(&#x27;Program&#x27;, arguments, this);
+  }
+
+  var methods = [&#x27;ImportDeclaration&#x27;, &#x27;CallExpression&#x27;, &#x27;MemberExpression&#x27;, &#x27;Property&#x27;, &#x27;VariableDeclarator&#x27;, &#x27;LogicalExpression
+&#x27;, &#x27;ConditionalExpression&#x27;, &#x27;IfStatement&#x27;, &#x27;ExpressionStatement&#x27;, &#x27;ExportDefaultDeclaration&#x27;];
+
+  var ret = {
+    visitor: { Program: Program }
+  };
+
+  var _iteratorNormalCompletion2 = true;
+  var _didIteratorError2 = false;
+  var _iteratorError2 = undefined;
+
+  try {
+    var _loop = function _loop() {
+      var method = _step2.value;
+
+      ret.visitor[method] = function () {
+        applyInstance(method, arguments, ret.visitor);
+      };
+    };
+
+    for (var _iterator2 = methods[Symbol.iterator](), _step2; !(_iteratorNormalCompletion2 = (_step2 = _iterator2.next()).done);
+_iteratorNormalCompletion2 = true) {
+      _loop();
+    }
+  } catch (err) {
+    _didIteratorError2 = true;
+    _iteratorError2 = err;
+  } finally {
+    try {
+      if (!_iteratorNormalCompletion2 &#x26;&#x26; _iterator2.return) {
+        _iterator2.return();
+      }
+    } finally {
+      if (_didIteratorError2) {
+        throw _iteratorError2;
+      }
+    }
+  }
+
+  return ret;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-import.Plugin" id="apidoc.element.babel-plugin-import.Plugin">
+        function <span class="apidocSignatureSpan">babel-plugin-import.</span>Plugin
+        <span class="apidocSignatureSpan">(libraryName, libraryDirectory, style, camel2DashComponentName, camel2UnderlineComponentName, types)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Plugin(libraryName, libraryDirectory, style, camel2DashComponentName, camel2UnderlineComponentName, types) {
+  _classCallCheck(this, Plugin);
+
+  this.specified = null;
+  this.libraryObjs = null;
+  this.selectedMethods = null;
+  this.libraryName = libraryName;
+  this.libraryDirectory = typeof libraryDirectory === &#x27;undefined&#x27; ? &#x27;lib&#x27; : libraryDirectory;
+  this.camel2DashComponentName = typeof camel2DashComponentName === &#x27;undefined&#x27; ? true : camel2DashComponentName;
+  this.camel2UnderlineComponentName = camel2UnderlineComponentName;
+  this.style = style || false;
+  this.types = types;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-import.toString" id="apidoc.element.babel-plugin-import.toString">
+        function <span class="apidocSignatureSpan">babel-plugin-import.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">toString = function () {
+    return text;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-import.Plugin" id="apidoc.module.babel-plugin-import.Plugin">module babel-plugin-import.Plugin</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-import.Plugin.Plugin" id="apidoc.element.babel-plugin-import.Plugin.Plugin">
+        function <span class="apidocSignatureSpan">babel-plugin-import.</span>Plugin
+        <span class="apidocSignatureSpan">(libraryName, libraryDirectory, style, camel2DashComponentName, camel2UnderlineComponentName, types)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function Plugin(libraryName, libraryDirectory, style, camel2DashComponentName, camel2UnderlineComponentName, types) {
+  _classCallCheck(this, Plugin);
+
+  this.specified = null;
+  this.libraryObjs = null;
+  this.selectedMethods = null;
+  this.libraryName = libraryName;
+  this.libraryDirectory = typeof libraryDirectory === &#x27;undefined&#x27; ? &#x27;lib&#x27; : libraryDirectory;
+  this.camel2DashComponentName = typeof camel2DashComponentName === &#x27;undefined&#x27; ? true : camel2DashComponentName;
+  this.camel2UnderlineComponentName = camel2UnderlineComponentName;
+  this.style = style || false;
+  this.types = types;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.babel-plugin-import.toString" id="apidoc.module.babel-plugin-import.toString">module babel-plugin-import.toString</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.babel-plugin-import.toString.toString" id="apidoc.element.babel-plugin-import.toString.toString">
+        function <span class="apidocSignatureSpan">babel-plugin-import.</span>toString
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function toString() { [native code] }</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
 
 </div>
 

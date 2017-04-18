@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,15 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-    >babel-plugin-import (v1.1.1)</a>
+    <a>babel-plugin-import (v1.1.1)</a>
 </h1>
 <h4>Component modular import plugin for babel.</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.babel-plugin-import">module babel-plugin-import</a><ol>
 
@@ -156,7 +151,7 @@
       _iteratorError = err;
     } finally {
       try {
-        if (!_iteratorNormalCompletion &#x26;&#x26; _iterator.return) {
+        if (!_iteratorNormalCompletion &amp;&amp; _iterator.return) {
           _iterator.return();
         }
       } finally {
@@ -180,22 +175,22 @@
               camel2DashComponentName = _ref3.camel2DashComponentName,
               camel2UnderlineComponentName = _ref3.camel2UnderlineComponentName;
 
-          (0, _assert2.default)(libraryName, &#x27;libraryName should be provided&#x27;);
+          (0, _assert2.default)(libraryName, 'libraryName should be provided');
           return new _Plugin2.default(libraryName, libraryDirectory, style, camel2DashComponentName, camel2UnderlineComponentName
 , types);
         });
       } else {
         opts = opts || {};
-        (0, _assert2.default)(opts.libraryName, &#x27;libraryName should be provided&#x27;);
+        (0, _assert2.default)(opts.libraryName, 'libraryName should be provided');
         plugins = [new _Plugin2.default(opts.libraryName, opts.libraryDirectory, opts.style, opts.camel2DashComponentName, opts.
 camel2UnderlineComponentName, types)];
       }
     }
-    applyInstance(&#x27;Program&#x27;, arguments, this);
+    applyInstance('Program', arguments, this);
   }
 
-  var methods = [&#x27;ImportDeclaration&#x27;, &#x27;CallExpression&#x27;, &#x27;MemberExpression&#x27;, &#x27;Property&#x27;, &#x27;VariableDeclarator&#x27;, &#x27;LogicalExpression
-&#x27;, &#x27;ConditionalExpression&#x27;, &#x27;IfStatement&#x27;, &#x27;ExpressionStatement&#x27;, &#x27;ExportDefaultDeclaration&#x27;];
+  var methods = ['ImportDeclaration', 'CallExpression', 'MemberExpression', 'Property', 'VariableDeclarator', 'LogicalExpression
+', 'ConditionalExpression', 'IfStatement', 'ExpressionStatement', 'ExportDefaultDeclaration'];
 
   var ret = {
     visitor: { Program: Program }
@@ -223,7 +218,7 @@ _iteratorNormalCompletion2 = true) {
     _iteratorError2 = err;
   } finally {
     try {
-      if (!_iteratorNormalCompletion2 &#x26;&#x26; _iterator2.return) {
+      if (!_iteratorNormalCompletion2 &amp;&amp; _iterator2.return) {
         _iterator2.return();
       }
     } finally {
@@ -254,8 +249,8 @@ _iteratorNormalCompletion2 = true) {
   this.libraryObjs = null;
   this.selectedMethods = null;
   this.libraryName = libraryName;
-  this.libraryDirectory = typeof libraryDirectory === &#x27;undefined&#x27; ? &#x27;lib&#x27; : libraryDirectory;
-  this.camel2DashComponentName = typeof camel2DashComponentName === &#x27;undefined&#x27; ? true : camel2DashComponentName;
+  this.libraryDirectory = typeof libraryDirectory === 'undefined' ? 'lib' : libraryDirectory;
+  this.camel2DashComponentName = typeof camel2DashComponentName === 'undefined' ? true : camel2DashComponentName;
   this.camel2UnderlineComponentName = camel2UnderlineComponentName;
   this.style = style || false;
   this.types = types;
@@ -299,8 +294,8 @@ _iteratorNormalCompletion2 = true) {
   this.libraryObjs = null;
   this.selectedMethods = null;
   this.libraryName = libraryName;
-  this.libraryDirectory = typeof libraryDirectory === &#x27;undefined&#x27; ? &#x27;lib&#x27; : libraryDirectory;
-  this.camel2DashComponentName = typeof camel2DashComponentName === &#x27;undefined&#x27; ? true : camel2DashComponentName;
+  this.libraryDirectory = typeof libraryDirectory === 'undefined' ? 'lib' : libraryDirectory;
+  this.camel2DashComponentName = typeof camel2DashComponentName === 'undefined' ? true : camel2DashComponentName;
   this.camel2UnderlineComponentName = camel2UnderlineComponentName;
   this.style = style || false;
   this.types = types;
@@ -335,3 +330,4 @@ _iteratorNormalCompletion2 = true) {
     ]
 </div>
 </div>
+</body></html>
