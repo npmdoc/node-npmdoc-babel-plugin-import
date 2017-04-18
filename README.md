@@ -1,9 +1,14 @@
-# api documentation for  babel-plugin-import (v1.1.1)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-plugin-import.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-plugin-import) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-plugin-import.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-plugin-import)
+# npmdoc-babel-plugin-import
+
+#### api documentation for  babel-plugin-import (v1.1.1)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-plugin-import.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-plugin-import) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-plugin-import.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-plugin-import)
+
 #### Component modular import plugin for babel.
 
-[![NPM](https://nodei.co/npm/babel-plugin-import.png?downloads=true)](https://www.npmjs.com/package/babel-plugin-import)
+[![NPM](https://nodei.co/npm/babel-plugin-import.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/babel-plugin-import)
 
-[![apidoc](https://npmdoc.github.io/node-npmdoc-babel-plugin-import/build/screenCapture.buildNpmdoc.browser._2Fhome_2Ftravis_2Fbuild_2Fnpmdoc_2Fnode-npmdoc-babel-plugin-import_2Ftmp_2Fbuild_2Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-babel-plugin-import/build/apidoc.html)
+- [https://npmdoc.github.io/node-npmdoc-babel-plugin-import/build/apidoc.html](https://npmdoc.github.io/node-npmdoc-babel-plugin-import/build/apidoc.html)
+
+[![apidoc](https://npmdoc.github.io/node-npmdoc-babel-plugin-import/build/screenCapture.buildCi.browser.%252Ftmp%252Fbuild%252Fapidoc.html.png)](https://npmdoc.github.io/node-npmdoc-babel-plugin-import/build/apidoc.html)
 
 ![npmPackageListing](https://npmdoc.github.io/node-npmdoc-babel-plugin-import/build/screenCapture.npmPackageListing.svg)
 
@@ -17,8 +22,7 @@
 
 {
     "author": {
-        "name": "chencheng",
-        "email": "sorrycc@gmail.com"
+        "name": "chencheng"
     },
     "babel": {
         "presets": [
@@ -67,12 +71,10 @@
     "main": "lib/index.js",
     "maintainers": [
         {
-            "name": "afc163",
-            "email": "afc163@gmail.com"
+            "name": "afc163"
         },
         {
-            "name": "sorrycc",
-            "email": "sorrycc@gmail.com"
+            "name": "sorrycc"
         }
     ],
     "name": "babel-plugin-import",
@@ -80,7 +82,6 @@
     "pre-commit": [
         "lint"
     ],
-    "readme": "ERROR: No README data found!",
     "scripts": {
         "build": "rm -rf lib && ./node_modules/.bin/babel src --out-dir lib --ignore __tests__",
         "coveralls": "cat ./coverage/lcov.info | coveralls",
@@ -91,16 +92,6 @@
     "version": "1.1.1"
 }
 ```
-
-
-
-# <a name="apidoc.tableOfContents"></a>[table of contents](#apidoc.tableOfContents)
-
-#### [module babel-plugin-import](#apidoc.module.babel-plugin-import)
-
-
-
-# <a name="apidoc.module.babel-plugin-import"></a>[module babel-plugin-import](#apidoc.module.babel-plugin-import)
 
 
 
