@@ -1,6 +1,6 @@
 # npmdoc-babel-plugin-import
 
-#### api documentation for  babel-plugin-import (v1.1.1)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-plugin-import.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-plugin-import) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-plugin-import.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-plugin-import)
+#### basic api documentation for  babel-plugin-import (v1.1.1)  [![npm package](https://img.shields.io/npm/v/npmdoc-babel-plugin-import.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-babel-plugin-import) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-babel-plugin-import.svg)](https://travis-ci.org/npmdoc/node-npmdoc-babel-plugin-import)
 
 #### Component modular import plugin for babel.
 
@@ -89,7 +89,8 @@
         "lint": "eslint --ext .js src",
         "test": "babel-node node_modules/.bin/babel-istanbul cover node_modules/.bin/_mocha --no-timeouts"
     },
-    "version": "1.1.1"
+    "version": "1.1.1",
+    "bin": {}
 }
 ```
 
